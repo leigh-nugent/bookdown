@@ -74,7 +74,8 @@ pdf_book = function(
     if (is.null(o)) return(output)
 
     output2 = file.path(o, output)
-    file.rename(output, output2)
+    file.copy(output, output2)
+    file.remove(output)
     if (keep_tex) file.rename(f, file.path(o, f))
     output2
   }
