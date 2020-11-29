@@ -76,7 +76,7 @@ pdf_book = function(
     output2 = file.path(o, output)
     file.copy(output, output2)
     file.remove(output)
-    if (keep_tex) file.rename(f, file.path(o, f))
+    if (keep_tex) {file.copy(f, file.path(o, f)); file.remove(f)}
     output2
   }
   # always enable tables (use packages booktabs, longtable, ...)
